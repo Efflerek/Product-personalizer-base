@@ -1,11 +1,10 @@
-import styles from './Container.module.scss';
+import styles from "./Container.module.scss";
+import PropTypes from "prop-types";
 
-const Container = (props) => {
-    return (
-        <div className={styles.container}>
-            {props.children}
-        </div>
-    );
+export const Container = ({ children }) => {
+  return <div className={styles.container}>{children}</div>;
 };
 
-export default Container;
+Container.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.object),
+};
